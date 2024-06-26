@@ -1,5 +1,5 @@
 For reference:-
       See this series:- https://www.youtube.com/playlist?list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW
 <br>
-<h2>Server side packages :- Express</h2>
-<h2>Client side packages:- ReactJs using vite. Tailwind</h2>
+<h2>Server side </h2>:- <ul> <li>Express</li></ul>
+<h2>Client side  </h2>:- <ul> <li>React Js(Vite Bundler)</li><br><li>Tailwind</li></ul>
