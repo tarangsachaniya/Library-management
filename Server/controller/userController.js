@@ -113,3 +113,32 @@ export const currentUser = async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 };
+
+export const logoutUser = async (req,res)=>{
+      try {
+        return res.status(200).clearCookie('user').json({
+            message: "User logged out successfully"
+        });    
+      }catch(err){
+            console.error(err.message);
+            res.status(500).json({ message: "Server Error" });
+      }
+}
+
+export const updateAccountDetails = async(req,res)=> {
+      try {
+            const {name , email, phone} = req.body;
+            const user = await User.findByIdAndUpdate(req.user,{
+                 $set:{ name,
+                  email,
+                  phone
+            }},{new :true}).select('-password');
+            if(!user){
+                  return res.status(404).json({message: "User not found" });
+            }
+            res.status(200).json({user , "message": "User updated successfully"});
+      }catch(err){
+            console.error(err.message);
+            res.status(500).json({ message: "Server Error" });
+      }
+}
